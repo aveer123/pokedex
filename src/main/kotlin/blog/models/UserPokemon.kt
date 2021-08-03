@@ -2,12 +2,7 @@ package blog.models
 
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
-import java.util.*
 import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-
 
 @Table("USER_POKEMON")
 @Entity

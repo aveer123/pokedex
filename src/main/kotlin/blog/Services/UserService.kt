@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service
 class UserService (val db: UserRepository){
     fun getUsers(): List<User> = db.getUsers()
 
-    fun postUser(user: User){
+    fun postUser(user: User): User{
         print(user)
-        db.save(user)
+        return db.save(user) as User
     }
 
     fun findByEmail(email: String): User?{

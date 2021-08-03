@@ -13,7 +13,7 @@ interface PokemonRepository : CrudRepository<Pokemon, String> {
     fun findMessages(): List<Pokemon>
 
     @Query("SELECT * FROM POKEMON where number=:number")
-    fun findPokemonByNumber(number: Int): Pokemon
+    fun findPokemonByNumber(number: Int): Pokemon?
 
 
     }

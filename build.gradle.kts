@@ -27,7 +27,6 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
 	implementation ("jakarta.xml.bind:jakarta.xml.bind-api:2.3.2")
 	implementation ("org.glassfish.jaxb:jaxb-runtime:2.3.2")
-	// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
 	implementation("javax.persistence:javax.persistence-api:2.2")
 	runtimeOnly ("mysql:mysql-connector-java")
 	runtimeOnly("com.h2database:h2")

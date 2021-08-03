@@ -7,7 +7,6 @@ import blog.dtos.LoginDTO
 import blog.dtos.PokemonDTO
 import blog.models.User
 import blog.dtos.RegisterDTO
-import blog.models.Pokemon
 import blog.models.UserPokemon
 import io.jsonwebtoken.ExpiredJwtException
 import io.jsonwebtoken.Jwts
@@ -85,21 +84,21 @@ class UserController (var service: UserService, var userPokemonService: UserPoke
     fun catchPokemon(@CookieValue("jwt") jwt: String?, @RequestBody body: PokemonDTO): ResponseEntity<Any>{
         try {
             if (jwt == null) {
-                return ResponseEntity.status(401).body("Unauthenticated 1")
+                return ResponseEntity.status(401).body("Unauthenticated")
             }
 
             val userBody = Jwts.parser().setSigningKey("secret").parseClaimsJws(jwt).body
             val userId: String = this.service.getById(userBody.issuer).id as String
             val pokemonNumber = body.number
-            val userPokemon: UserPokemon = UserPokemon()
+            val userPokemon= UserPokemon()
             userPokemon.userId = userId
-            userPokemon.pokemonId = pokemonService.findPokemonByNumber(pokemonNumber as Int).id as String //most disgusting thing ive wrote
+            userPokemon.pokemonId = pokemonService.findPokemonByNumber(pokemonNumber as Int).id as String
             print(userPokemon.pokemonId)
             return ResponseEntity.ok(this.userPokemonService.catch(userPokemon))
 
         }catch (e: Exception){
             print(e)
-            return ResponseEntity.status(401).body("Unauthenticated 2")
+            return ResponseEntity.status(401).body("Unauthenticated")
         }
     }
 

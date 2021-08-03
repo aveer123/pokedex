@@ -1,13 +1,10 @@
 package blog.models
 
-import blog.DataClasses.Pokemon
 import net.minidev.json.annotate.JsonIgnore
-import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
-import java.util.ArrayList
 import javax.persistence.*
 
 

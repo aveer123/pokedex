@@ -3,7 +3,6 @@ package blog.Services
 import blog.models.Pokemon
 import blog.Repository.PokemonRepository
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service("PokemonService")
 class PokemonService (val db: PokemonRepository){
@@ -13,11 +12,12 @@ class PokemonService (val db: PokemonRepository){
 
     }
 
-    fun post(pokemon: Pokemon){
+    fun post(pokemon: Pokemon): Pokemon{
         print(pokemon)
-        db.save(pokemon)
+        return db.save(pokemon)
     }
     fun findPokemonByNumber(number: Int): Pokemon{
-        return db.findPokemonByNumber(number)
+        return db.findPokemonByNumber(number) ?: throw Exception("No pokemon found by id")
+
     }
 }

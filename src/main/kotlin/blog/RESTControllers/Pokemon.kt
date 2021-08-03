@@ -17,8 +17,8 @@ class PokemonController (val service: PokemonService){
     }
 
     @PostMapping("/post-pokemon")
-    fun post(@RequestBody pokemon: Pokemon) {
-        service.post(pokemon)
+    fun post(@RequestBody pokemon: Pokemon): Pokemon {
+        return service.post(pokemon)
     }
 
     @DeleteMapping

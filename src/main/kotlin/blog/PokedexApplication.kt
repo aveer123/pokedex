@@ -2,16 +2,7 @@ package blog
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.data.annotation.Id
-import org.springframework.data.jdbc.repository.query.Query
-import org.springframework.data.relational.core.mapping.Table
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.*
-import java.util.*
-import blog.RESTControllers.PokemonController
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-import org.springframework.stereotype.Repository
 
 
 @SpringBootApplication(exclude = [SecurityAutoConfiguration::class])

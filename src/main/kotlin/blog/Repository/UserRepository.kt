@@ -15,7 +15,6 @@ interface UserRepository : CrudRepository<User, String> {
 
     fun save(user: User): User?{
         return this.save(user)
-
     }
 
     fun findByEmail(email: String): User?

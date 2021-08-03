@@ -1,13 +1,8 @@
 package blog.models
 
-import blog.DataClasses.Pokemon
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
-import java.util.ArrayList
 import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.JoinTable
-import javax.persistence.ManyToMany
 
 @Table("POKEMON")
 @Entity
